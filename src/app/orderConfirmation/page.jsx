@@ -25,10 +25,7 @@ const OrderConfirmationPage = () => {
   } = useContext(FlowContext);
   useEffect(() => {
     setOrderId(Math.floor(Math.random() * 1000000) + 1);
-    // const storedStatus = sessionStorage.getItem("orderStatus");
-    // if (storedStatus) {
-    //   setOrderStatus(storedStatus);
-    // } else {
+ n
     const timer = setTimeout(() => {
       const randomStatus = Math.random() < 0.7 ? "Success" : "Failure";
       setOrderStatus(randomStatus);
