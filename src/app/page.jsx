@@ -5,6 +5,7 @@ import { UserContext } from "./context/UserContext";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { TfiReload } from "react-icons/tfi";
+import Image from "next/image";
 import FlowContext from "./context/FlowContext";
 
 const CheckoutPage = () => {
@@ -108,7 +109,9 @@ const CheckoutPage = () => {
                   className=" mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6"
                 >
                   <div className="flex flex-col rounded-lg bg-white sm:flex-row">
-                    <img
+                    <Image
+                      width={112}
+                      height={96}
                       className="m-2 h-24 w-28 rounded-md border object-cover object-center"
                       src={product.image}
                       alt=""
