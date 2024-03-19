@@ -9,6 +9,8 @@ export const UserProvider = ({ children }) => {
   const [cardHolderName, setCardHolderName] = useState("");
   const [paymentCompany, setPaymentCompany] = useState("");
   const [upiId, setUpiId] = useState("");
+  const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
   return (
     <UserContext.Provider
       value={{
@@ -23,7 +25,11 @@ export const UserProvider = ({ children }) => {
         paymentCompany,
         setPaymentCompany,
         upiId,
-        setUpiId
+        setUpiId,
+        state,
+        setState,
+        country,
+        setCountry
       }}
     >
       {children}

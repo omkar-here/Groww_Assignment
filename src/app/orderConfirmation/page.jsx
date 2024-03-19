@@ -25,7 +25,7 @@ const OrderConfirmationPage = () => {
   } = useContext(FlowContext);
   useEffect(() => {
     setOrderId(Math.floor(Math.random() * 1000000) + 1);
- n
+
     const timer = setTimeout(() => {
       const randomStatus = Math.random() < 0.7 ? "Success" : "Failure";
       setOrderStatus(randomStatus);
@@ -84,7 +84,8 @@ const OrderConfirmationPage = () => {
         <div className="mb-4">
           <p className="font-semibold">Payment Method: UPI</p>
           <p className="font-semibold">
-            Payment executed by {paymentCompany} of UPI ID ***{upiId.slice(-4)}
+            Payment executed by {paymentCompany} of UPI ID ***
+            {upiId.slice(3, upiId.length)}
           </p>
         </div>
       );

@@ -3,9 +3,9 @@ import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import FlowContext from "../context/FlowContext";
 const CardPaymentDetails = (props) => {
-  const { billingAmount } = useContext(UserContext);
-  
-  
+  const { billingAmount, country, setCountry, state, setState } =
+    useContext(UserContext);
+
   const {
     email,
     setEmail,
@@ -17,17 +17,30 @@ const CardPaymentDetails = (props) => {
     setCreditExpiry,
     creditCvc,
     setCreditCvc,
-    billingAddress,
-    setBillingAddress,
-    billingState,
-    setBillingState,
- 
+
     error,
     setError,
     isLoading,
     setIsLoading,
     handleSubmit,
   } = props;
+
+  const handleCardNoChange = (e) => {
+    const value = e.target.value.replace(/\D/g, "").slice(0, 16); // Allow only digits and limit to 16 characters
+    const formattedValue = value
+      .replace(/\s/g, "")
+      .replace(/(.{4})/g, "$1 ")
+      .trim();
+    setCardNo(formattedValue);
+  };
+  const formatExpiry = (value) => {
+    const result = value
+      ?.replace(/\s/g, "")
+      ?.match(/.{1,2}/g)
+      ?.join("/")
+      ?.substr(0, 5);
+    setCreditExpiry(result);
+  };
   return (
     <>
       <div className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
@@ -120,7 +133,8 @@ const CardPaymentDetails = (props) => {
                   className="w-full rounded-md border border-gray-200 px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="xxxx-xxxx-xxxx-xxxx"
                   value={cardNo}
-                  onChange={(e) => setCardNo(e.target.value.replace(/\D/g, ""))} // Allow only digits
+                  onChange={handleCardNoChange}
+                  maxLength={19}
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                   <svg
@@ -142,9 +156,15 @@ const CardPaymentDetails = (props) => {
                 className="w-full rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="MM/YY"
                 value={creditExpiry}
-                onChange={(e) =>
-                  setCreditExpiry(e.target.value.replace(/\D/g, "").slice(0, 5))
-                } // Allow only digits and limit to 5 characters
+                onChange={(e) => {
+                  let result = e.target.value.replace(/\D/g, "").slice(0, 5);
+                  result = result
+                    ?.replace(/\s/g, "")
+                    ?.match(/.{1,2}/g)
+                    ?.join("/")
+                    .substr(0, 5);
+                  setCreditExpiry(result);
+                }} // Allow only digits and limit to 5 characters
               />
               <input
                 type="text"
@@ -152,9 +172,9 @@ const CardPaymentDetails = (props) => {
                 className="w-1/6 flex-shrink-0 rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="CVC"
                 value={creditCvc}
-                onChange={(e) =>
-                  setCreditCvc(e.target.value.replace(/\D/g, "").slice(0, 3))
-                } // Allow only digits and limit to 3 characters
+                onChange={(e) => {
+                  setCreditCvc(e.target.value.replace(/\D/g, "").slice(0, 3));
+                }} // Allow only digits and limit to 3 characters
               />
             </div>
             <label
@@ -172,21 +192,23 @@ const CardPaymentDetails = (props) => {
                   name="billing-address"
                   className="w-full rounded-md border border-gray-200 px-4 py-3  text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="Country"
-                  value={billingAddress}
-                  onChange={(e) => setBillingAddress(e.target.value)}
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
                 />
               </div>
               <select
                 type="text"
                 name="billing-state"
                 className="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
-                value={billingState}
-                onChange={(e) => setBillingState(e.target.value)}
+                value={state}
+                onChange={(e) => setState(e.target.value)}
               >
                 <option value="">State</option>
-                <option value="CA">CaliFornia</option>
-                <option value="NY">New York</option>
-                <option value="TX">Texas</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
               </select>
               {/* <input
                 type="text"
@@ -216,6 +238,14 @@ const CardPaymentDetails = (props) => {
             {isLoading ? "Processing..." : "Proceed"}
           </button>
           {/* </Link> */}
+          {/* Required format information */}
+          <p className="text-sm text-gray-500">
+            *Card number should be in the format XXXX-XXXX-XXXX-XXXX.
+            <br />
+            *CVC should be a 3 or 4 digit number.
+            <br />
+            *Expiry should be in MM/YY format.
+          </p>
         </form>
       </div>
       ;

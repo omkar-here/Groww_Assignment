@@ -9,25 +9,17 @@ import UpiPaymentOptions from "../components/UpiPaymentCompanyOptions";
 import { validatehtmlForm } from "../utils/validateHtmlForm";
 import { UserContext } from "../context/UserContext";
 import { useRouter } from "next/navigation";
+
 import FlowContext from "../context/FlowContext";
 const Payment = () => {
   const [cardNo, setCardNo] = useState("");
   const [creditExpiry, setCreditExpiry] = useState("");
   const [creditCvc, setCreditCvc] = useState("");
-  const [billingAddress, setBillingAddress] = useState("");
-  const [billingState, setBillingState] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const router = useRouter();
 
-  const {
-    checkoutCompleted,
-    setCheckoutCompleted,
-    paymentCompleted,
-    setPaymentCompleted,
-    confirmationCompleted,
-    setConfirmationCompleted,
-  } = useContext(FlowContext);
+  const { setPaymentCompleted } = useContext(FlowContext);
 
   const {
     email,
@@ -36,6 +28,8 @@ const Payment = () => {
     setCardHolderName,
     paymentMethod,
     setPaymentMethod,
+    country,
+    state,
   } = useContext(UserContext);
 
   const handlePaymentMethodChange = (method) => {
@@ -51,9 +45,9 @@ const Payment = () => {
         cardNo,
         creditCvc,
         creditExpiry,
-        billingAddress,
-        billingState,
-        setError
+        setError,
+        country,
+        state
       )
     ) {
       return; // Prevent submission if validation fails
@@ -81,9 +75,17 @@ const Payment = () => {
                 type="radio"
                 name="radio"
               />
-              <span className="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+              <span
+                className={`${
+                  paymentMethod === "Card" ? "border-gray-700" : ""
+                }  absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white`}
+              ></span>
               <label
-                className="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 "
+                className={`${
+                  paymentMethod == "Card"
+                    ? "border-2 border-gray-700 bg-gray-50 "
+                    : ""
+                }   flex cursor-pointer select-none rounded-lg border border-gray-300`}
                 htmlFor="radio_1"
                 onClick={() => handlePaymentMethodChange("Card")}
               >
@@ -110,7 +112,11 @@ const Payment = () => {
               />
               <span className="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
               <label
-                className="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 "
+                className={`${
+                  paymentMethod == "UPI"
+                    ? "border-2 border-gray-700 bg-gray-50 "
+                    : ""
+                }   flex cursor-pointer select-none rounded-lg border border-gray-300`}
                 htmlFor="radio_2"
                 onClick={() => handlePaymentMethodChange("UPI")}
               >
@@ -141,10 +147,6 @@ const Payment = () => {
             setCreditExpiry={setCreditExpiry}
             creditCvc={creditCvc}
             setCreditCvc={setCreditCvc}
-            billingAddress={billingAddress}
-            setBillingAddress={setBillingAddress}
-            billingState={billingState}
-            setBillingState={setBillingState}
             error={error}
             setError={setError}
             isLoading={isLoading}

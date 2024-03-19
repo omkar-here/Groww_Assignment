@@ -1,12 +1,10 @@
-export const validatehtmlForm = (email, cardNo, creditCvc, creditExpiry, billingAddress, billingState, setError) => {
+export const validatehtmlForm = (email, cardNo, creditCvc, creditExpiry, country, state, setError) => {
     console.log("Validating htmlForm...");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const cardNumberRegex =
-        /^(\d{4}[-]){3}\d{4}$|^\d{16}$/;
-    const cvcRegex = /^\d{3,4}$/
-;
-    const expiryRegex = /^(0[1-9]|1[0-2])\/(2[1-9]|[3-9][0-9]|1[0-9]{2})$/
-;
+    const cardNumberRegex = /^(\d{4}\s?){3}\d{4}$/;
+
+    const cvcRegex = /^\d{3,4}$/;
+    const expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
 
     if (!emailRegex.test(email)) {
         setError("Please enter a valid email address.");
@@ -14,7 +12,8 @@ export const validatehtmlForm = (email, cardNo, creditCvc, creditExpiry, billing
     }
 
     if (!cardNumberRegex.test(cardNo)) {
-        setError("Please enter a valid card number.");
+
+        setError("Please enter a valid card number (16 digits or in the format XXXX-XXXX-XXXX-XXXX)." + cardNo);
         return false;
     }
 
@@ -24,16 +23,16 @@ export const validatehtmlForm = (email, cardNo, creditCvc, creditExpiry, billing
     }
 
     if (!expiryRegex.test(creditExpiry)) {
-        setError("Please enter a valid expiration date (MM/YY).");
+        setError("Please enter a valid expiration date in MM/YY format.");
         return false;
     }
 
-    if (billingAddress.trim() === "") {
-        setError("Please enter a billing address.");
+    if (country === "") {
+        setError("Please enter your country name.");
         return false;
     }
 
-    if (billingState === "") {
+    if (state === "") {
         setError("Please select a state.");
         return false;
     }

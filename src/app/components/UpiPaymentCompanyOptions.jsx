@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaGooglePay, FaAmazonPay, FaPaypal } from "react-icons/fa";
 import { SiPaytm } from "react-icons/si";
-import UpiPaymentCredentials from "./UpiPaymentCompanyCredentials";
+import UpiPaymentCredentials from "./UpiPaymentCredentials";
 import Payment from "../payment/page";
 import { UserContext } from "../context/UserContext";
 const paymentOptions = [
