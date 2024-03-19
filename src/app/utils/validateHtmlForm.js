@@ -22,7 +22,7 @@ export const validatehtmlForm = (props) => {
 
     if (!cardNumberRegex.test(cardNo)) {
 
-        setError("Please enter a valid card number (16 digits or in the format XXXX-XXXX-XXXX-XXXX)." + cardNo);
+        setError("Please enter a valid card number (16 digits or in the format XXXX-XXXX-XXXX-XXXX).");
         return false;
     }
 
