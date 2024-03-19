@@ -40,15 +40,15 @@ const Payment = () => {
     event.preventDefault();
     console.log("Submitting htmlForm...");
     if (
-      !validatehtmlForm(
+      !validatehtmlForm({
         email,
         cardNo,
         creditCvc,
         creditExpiry,
-        setError,
         country,
-        state
-      )
+        state,
+        setError,
+      })
     ) {
       return; // Prevent submission if validation fails
     }

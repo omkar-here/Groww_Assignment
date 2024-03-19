@@ -1,4 +1,13 @@
-export const validatehtmlForm = (email, cardNo, creditCvc, creditExpiry, country, state, setError) => {
+export const validatehtmlForm = (props) => {
+    const {
+        email,
+        cardNo,
+        creditCvc,
+        creditExpiry,
+        country,
+        state,
+        setError,
+    } = props;
     console.log("Validating htmlForm...");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const cardNumberRegex = /^(\d{4}\s?){3}\d{4}$/;
