@@ -209,6 +209,7 @@ const CardPaymentDetails = (props) => {
                 <option value="Rajasthan">Rajasthan</option>
                 <option value="Chennai">Chennai</option>
                 <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Other">Other</option>
               </select>
               {/* <input
                 type="text"
