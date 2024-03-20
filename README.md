@@ -43,6 +43,4 @@ The code for this project is available on GitHub [here](link-to-github-repo).
 
 - **White Labeling**: Incorporating a White Labeling feature to allow customization of the application's theme according to different brands could enhance its adaptability and appeal to a wider audience.
   
-- **Performance Optimization**: Further optimization of code and assets could improve the application's performance, especially on slower networks or devices.
-  
 - **Accessibility**: Enhancing accessibility features, such as screen reader compatibility and keyboard navigation, would ensure a more inclusive user experience.
