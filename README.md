@@ -10,9 +10,16 @@ You can view a live demo of the project [here](link-to-live-demo).
 
 Watch a detailed demonstration of the project features on YouTube [here](link-to-youtube-video).
 
+
 ## GitHub Repository
 
 The code for this project is available on GitHub [here](link-to-github-repo).
+
+## Screenshots
+
+![Homepage](https://example.com/homepage.png)
+![Checkout Page](https://example.com/checkout-page.png)
+![Order Confirmation Page](https://example.com/order-confirmation.png)
 
 ## Features Implemented
 
