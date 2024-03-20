@@ -4,7 +4,7 @@ This project is a user-friendly, visually engaging, and responsive online shoppi
 
 ## Live Demo
 
-You can view a live demo of the project [here](groww-assignment-project-git-main-omkars-projects-ecadebd9.vercel.app).
+You can view a live demo of the project [here](https://groww-assignment-project-git-main-omkars-projects-ecadebd9.vercel.app/).
 
 ## YouTube Demonstration
 
