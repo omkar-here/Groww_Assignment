@@ -53,6 +53,20 @@ The code for this project is available on GitHub [here](link-to-github-repo).
 ## Installation and Running the App
 
 1. Clone the repository to your local machine:
-   ```
-   git clone https://github.com/your-username/your-repo.git
-  ```
+   `git clone https://github.com/omkar-here/Groww_Assignment.git`
+  
+2. Navigate to the project directory:
+  `cd Groww_Assignment`
+3. Install dependencies using npm or yarn:
+  `npm install
+     or
+    yarn install`
+ 4. Run the Vercel app locally:
+  `npm run dev
+    or
+    yarn dev`
+  5. Access the local app in your web browser:
+ `http://localhost:3000`
+
+
+
