@@ -17,9 +17,10 @@ The code for this project is available on GitHub [here](https://github.com/omkar
 
 ## Screenshots
 
-![Homepage](https://example.com/homepage.png)
-![Checkout Page](https://example.com/checkout-page.png)
-![Order Confirmation Page](https://example.com/order-confirmation.png)
+![Homepage](https://github.com/omkar-here/Groww_Assignment/blob/main/Homepage.jpeg)
+![CardPayment Page](https://github.com/omkar-here/Groww_Assignment/blob/main/CardPayment.jpeg)
+![UPI Payment Page](https://github.com/omkar-here/Groww_Assignment/blob/main/UpiPayment.jpeg)
+![Order Confirmation Page](https://github.com/omkar-here/Groww_Assignment/blob/main/OrderConfirmation.jpeg)
 
 ## Features Implemented
 
