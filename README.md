@@ -42,16 +42,14 @@ The code for this project is available on GitHub [here](https://github.com/omkar
   
 - **State Management**: The Context API has been used for state management, providing a centralized store for data and facilitating seamless updates across components.
 
-## Challenges Faced
+## Challenges :
 
 - **Deployment**: Deployment challenges were encountered due to an error at Vercel's end, resulting in wasted time and effort. This experience highlighted the importance of thorough testing and troubleshooting during deployment processes.
 
-## Future Improvements
+- **Caching**: NextJS inbuilt cache functionality for fetch requests wasn't working. So I implemented the caching method in a traditional manner. I tried "force-cache", "no-store" & "revalidate". But none seemed to fit in perfectly for the requirement.
 
-- **White Labeling**: Incorporating a White Labeling feature to allow customization of the application's theme according to different brands could enhance its adaptability and appeal to a wider audience.
-  
-- **Accessibility**: Enhancing accessibility features, such as screen reader compatibility and keyboard navigation, would ensure a more inclusive user experience.
-## Installation and Running the App
+- **Responsiveness**: Implementing responsiveness posed challenges due to complex layouts and the need to manage media queries effectively for different screen sizes.
+
 
 1. Clone the repository to your local machine:
    `git clone https://github.com/omkar-here/Groww_Assignment.git`
