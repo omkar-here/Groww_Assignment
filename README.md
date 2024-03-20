@@ -1,6 +1,6 @@
 # Online Shopping Checkout Experience
 
-This project is a user-friendly, visually engaging, and responsive online shopping checkout experience developed as part of the Frontend Developer - Intern assignment for [Company Name].
+This project is a user-friendly, visually engaging, and responsive online shopping checkout experience developed as part of the Frontend Developer - Intern assignment.
 
 ## Live Demo
 
@@ -45,9 +45,14 @@ The code for this project is available on GitHub [here](link-to-github-repo).
 
 - **Deployment**: Deployment challenges were encountered due to an error at Vercel's end, resulting in wasted time and effort. This experience highlighted the importance of thorough testing and troubleshooting during deployment processes.
 
-
 ## Future Improvements
 
 - **White Labeling**: Incorporating a White Labeling feature to allow customization of the application's theme according to different brands could enhance its adaptability and appeal to a wider audience.
   
 - **Accessibility**: Enhancing accessibility features, such as screen reader compatibility and keyboard navigation, would ensure a more inclusive user experience.
+## Installation and Running the App
+
+1. Clone the repository to your local machine:
+   ```
+   git clone https://github.com/your-username/your-repo.git
+  ```
