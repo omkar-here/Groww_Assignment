@@ -4,16 +4,16 @@ This project is a user-friendly, visually engaging, and responsive online shoppi
 
 ## Live Demo
 
-You can view a live demo of the project [here](link-to-live-demo).
+You can view a live demo of the project [here](groww-assignment-project-git-main-omkars-projects-ecadebd9.vercel.app).
 
 ## YouTube Demonstration
 
-Watch a detailed demonstration of the project features on YouTube [here](link-to-youtube-video).
+Watch a detailed demonstration of the project features on YouTube [here](https://youtu.be/RDsRbKM788E).
 
 
 ## GitHub Repository
 
-The code for this project is available on GitHub [here](link-to-github-repo).
+The code for this project is available on GitHub [here](https://github.com/omkar-here/Groww_Assignment.git).
 
 ## Screenshots
 
